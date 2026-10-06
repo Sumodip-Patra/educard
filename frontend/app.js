@@ -5,8 +5,17 @@ let currentCardIndex = 0;
 let currentWrongContext = null;
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadDecks();
-  loadMaterials();
+
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        document.getElementById("theme-toggle").textContent = "🌙";
+    }
+
+    loadDecks();
+    loadMaterials();
+
 });
 
 function switchView(viewName) {
@@ -308,4 +317,16 @@ async function fetchAiExplanation() {
 
 function escapeQuote(str) {
   return str.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+}
+
+
+function toggleTheme() {
+    document.body.classList.toggle("dark-mode");
+
+    const button = document.getElementById("theme-toggle");
+    const isDarkMode = document.body.classList.contains("dark-mode");
+
+    button.textContent = isDarkMode ? "🌙" : "☀️";
+
+    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
 }
