@@ -1,0 +1,184 @@
+[
+  {
+    "id": "e5e3c492-96b6-400e-9bb0-fea7e831df09",
+    "title": "Mastering Photosynthesis",
+    "description": "AI-generated study deck covering Photosynthesis using uploaded syllabus materials.",
+    "category": "Study Deck",
+    "creator": "EduCards AI",
+    "collaborators": [],
+    "created_at": "2026-10-05T17:24:16.391882",
+    "updated_at": "2026-10-05T17:24:16.391892",
+    "cards": [
+      {
+        "id": "02fb45e5-da2b-434e-b8c6-892ae70adb8a",
+        "deck_id": "e5e3c492-96b6-400e-9bb0-fea7e831df09",
+        "type": "flashcard",
+        "question": "What is key concept 1 of Photosynthesis?",
+        "answer": "Core definition and mechanism of Photosynthesis part 1.",
+        "options": null,
+        "explanation": "This concept is foundational when studying Photosynthesis."
+      },
+      {
+        "id": "8489d4c9-05d6-4e4e-a41a-8c6e9769fdd9",
+        "deck_id": "e5e3c492-96b6-400e-9bb0-fea7e831df09",
+        "type": "flashcard",
+        "question": "What is key concept 2 of Photosynthesis?",
+        "answer": "Core definition and mechanism of Photosynthesis part 2.",
+        "options": null,
+        "explanation": "This concept is foundational when studying Photosynthesis."
+      },
+      {
+        "id": "8965ba9a-3722-453f-ba2f-57fc337abb24",
+        "deck_id": "e5e3c492-96b6-400e-9bb0-fea7e831df09",
+        "type": "flashcard",
+        "question": "What is key concept 3 of Photosynthesis?",
+        "answer": "Core definition and mechanism of Photosynthesis part 3.",
+        "options": null,
+        "explanation": "This concept is foundational when studying Photosynthesis."
+      }
+    ]
+  },
+  {
+    "id": "36b62aad-4b03-4024-b4e9-8ad52c1e917b",
+    "title": "Math 101",
+    "description": "Basic algebra",
+    "category": "Math",
+    "creator": "Alice",
+    "collaborators": [],
+    "created_at": "2026-10-05T17:24:16.416481",
+    "updated_at": "2026-10-05T17:24:16.416491",
+    "cards": []
+  },
+  {
+    "id": "aef4af99-8020-4aa6-92a7-f2437b8ef2ea",
+    "title": "Mastering Photosynthesis",
+    "description": "AI-generated study deck covering Photosynthesis using uploaded syllabus materials.",
+    "category": "Study Deck",
+    "creator": "EduCards AI",
+    "collaborators": [],
+    "created_at": "2026-10-06T03:53:30.462327+00:00",
+    "updated_at": "2026-10-06T03:53:30.462335+00:00",
+    "cards": [
+      {
+        "id": "a8899d82-cd20-4eb4-a8cc-f13d9196b09c",
+        "deck_id": "aef4af99-8020-4aa6-92a7-f2437b8ef2ea",
+        "type": "flashcard",
+        "question": "What is key concept 1 of Photosynthesis?",
+        "answer": "Core definition and mechanism of Photosynthesis part 1.",
+        "options": null,
+        "explanation": "This concept is foundational when studying Photosynthesis."
+      },
+      {
+        "id": "73301436-75e1-4e70-a7a9-6bc14736e1a8",
+        "deck_id": "aef4af99-8020-4aa6-92a7-f2437b8ef2ea",
+        "type": "flashcard",
+        "question": "What is key concept 2 of Photosynthesis?",
+        "answer": "Core definition and mechanism of Photosynthesis part 2.",
+        "options": null,
+        "explanation": "This concept is foundational when studying Photosynthesis."
+      },
+      {
+        "id": "e6fbe992-9e46-4b02-992b-40107396bd0e",
+        "deck_id": "aef4af99-8020-4aa6-92a7-f2437b8ef2ea",
+        "type": "flashcard",
+        "question": "What is key concept 3 of Photosynthesis?",
+        "answer": "Core definition and mechanism of Photosynthesis part 3.",
+        "options": null,
+        "explanation": "This concept is foundational when studying Photosynthesis."
+      }
+    ]
+  },
+  {
+    "id": "1b026bf3-033a-47fc-869e-0bb11e76a0d4",
+    "title": "Math 101",
+    "description": "Basic algebra",
+    "category": "Math",
+    "creator": "Alice",
+    "collaborators": [],
+    "created_at": "2026-10-06T03:53:30.480341+00:00",
+    "updated_at": "2026-10-06T03:53:30.480351+00:00",
+    "cards": []
+  },
+  {
+    "id": "0c884bd6-e868-477b-967c-9e5b062e9309",
+    "title": "Mastering computer science",
+    "description": "AI-generated study deck covering computer science using uploaded syllabus materials.",
+    "category": "Study Deck",
+    "creator": "EduCards AI",
+    "collaborators": [],
+    "created_at": "2026-10-06T04:03:52.031695+00:00",
+    "updated_at": "2026-10-06T04:03:52.031704+00:00",
+    "cards": [
+      {
+        "id": "a8c712aa-cb41-4e42-bb80-847f8138e6a4",
+        "deck_id": "0c884bd6-e868-477b-967c-9e5b062e9309",
+        "type": "mcq",
+        "question": "Sample MCQ 1 about computer science?",
+        "answer": "Option A",
+        "options": [
+          "Option A",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "explanation": "Option A is correct because it directly relates to core concepts of computer science."
+      },
+      {
+        "id": "b69239e9-487b-4ca9-b01b-1e7ec6ca4acd",
+        "deck_id": "0c884bd6-e868-477b-967c-9e5b062e9309",
+        "type": "mcq",
+        "question": "Sample MCQ 2 about computer science?",
+        "answer": "Option A",
+        "options": [
+          "Option A",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "explanation": "Option A is correct because it directly relates to core concepts of computer science."
+      },
+      {
+        "id": "69fb908f-abd1-409a-9ba1-456f444a1d19",
+        "deck_id": "0c884bd6-e868-477b-967c-9e5b062e9309",
+        "type": "mcq",
+        "question": "Sample MCQ 3 about computer science?",
+        "answer": "Option A",
+        "options": [
+          "Option A",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "explanation": "Option A is correct because it directly relates to core concepts of computer science."
+      },
+      {
+        "id": "a00751f9-4fa3-4971-bdae-55e048e48a84",
+        "deck_id": "0c884bd6-e868-477b-967c-9e5b062e9309",
+        "type": "mcq",
+        "question": "Sample MCQ 4 about computer science?",
+        "answer": "Option A",
+        "options": [
+          "Option A",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "explanation": "Option A is correct because it directly relates to core concepts of computer science."
+      },
+      {
+        "id": "a257d682-4aa5-4a99-9553-51967e7bf5e4",
+        "deck_id": "0c884bd6-e868-477b-967c-9e5b062e9309",
+        "type": "mcq",
+        "question": "Sample MCQ 5 about computer science?",
+        "answer": "Option A",
+        "options": [
+          "Option A",
+          "Option B",
+          "Option C",
+          "Option D"
+        ],
+        "explanation": "Option A is correct because it directly relates to core concepts of computer science."
+      }
+    ]
+  }
+]

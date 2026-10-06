@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduCards - Collaborative Study Assistant</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Edu<span>Cards</span></div>
+    <nav>
+      <button onclick="switchView('dashboard')" id="nav-dashboard" class="active">Dashboard</button>
+      <button onclick="switchView('decks')" id="nav-decks">Study Decks</button>
+      <button onclick="switchView('materials')" id="nav-materials">Upload Materials</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Dashboard View -->
+    <div id="view-dashboard" class="view active">
+      <h2>Welcome to EduCards</h2>
+      <p class="subtitle">Collaborate, practice, and master your subjects.</p>
+      
+      <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+        <button class="btn" onclick="switchView('decks')">Explore Study Decks</button>
+        <button class="btn btn-secondary" onclick="openGenModal()">Generate with AI </button>
+      </div>
+
+      <div class="panel">
+        <h3>Recent Decks</h3>
+        <div id="dashboard-decks-grid" class="card-grid">
+          <!-- Loaded dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Decks View -->
+    <div id="view-decks" class="view">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <div>
+          <h2>Study Decks</h2>
+          <p class="subtitle" style="margin-bottom: 0;">Create or practice collections of flashcards and MCQs.</p>
+        </div>
+        <button class="btn" onclick="openGenModal()">+ Gen AI Deck</button>
+      </div>
+      
+      <div id="decks-grid" class="card-grid">
+        <!-- Loaded dynamically -->
+      </div>
+    </div>
+
+    <!-- Materials (RAG) View -->
+    <div id="view-materials" class="view">
+      <h2>Syllabus & Study Materials</h2>
+      <p class="subtitle">Upload lecture notes, syllabi (PDF or TXT), and EduCards will ground AI flashcard generation in your coursework.</p>
+
+      <div class="panel" style="max-width: 600px;">
+        <h3>Upload New Material</h3>
+        <form id="upload-form" onsubmit="uploadMaterial(event)">
+          <div class="form-group">
+            <label for="material-file">Select PDF or Text File</label>
+            <input type="file" id="material-file" accept=".pdf,.txt" required>
+          </div>
+          <button type="submit" class="btn">Upload </button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h3>Indexed Materials</h3>
+        <div id="materials-list">
+          <!-- Loaded dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Practice View -->
+    <div id="view-practice" class="view">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <h2 id="practice-deck-title">Practice Deck</h2>
+        <button class="btn btn-secondary" onclick="switchView('decks')">&larr; Back to Decks</button>
+      </div>
+
+      <div class="practice-container">
+        <div id="practice-progress" class="badge">Card 1 of 5</div>
+        
+        <div id="flashcard-container" class="flashcard-box" onclick="flipFlashcard()">
+          <div id="fc-question" class="flashcard-question">Loading question...</div>
+          <div id="fc-answer" class="flashcard-answer">Loading answer...</div>
+          <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 1rem;">(Click card to reveal answer)</div>
+        </div>
+
+        <div id="mcq-container" style="display: none;">
+          <div id="mcq-question" class="flashcard-question" style="text-align: left; margin-bottom: 1rem;">Question</div>
+          <div id="mcq-options" class="mcq-options"></div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 1.5rem;">
+          <button class="btn btn-secondary" onclick="prevCard()">&larr; Previous</button>
+          <button class="btn" onclick="nextCard()">Next Card &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Gen AI Deck Generation Modal -->
+  <div id="gen-modal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeGenModal()">&times;</button>
+      <h3>Generate Deck with AI </h3>
+      <form id="gen-form" onsubmit="generateDeck(event)">
+        <div class="form-group">
+          <label for="gen-topic">Topic or Subject</label>
+          <input type="text" id="gen-topic" placeholder="e.g. Quantum Physics, Cellular Respiration" required>
+        </div>
+        <div class="form-group">
+          <label for="gen-type">Card Type</label>
+          <select id="gen-type">
+            <option value="flashcard">Flashcards Only</option>
+            <option value="mcq">Multiple Choice Questions (MCQ)</option>
+            <option value="mixed">Mixed (Flashcards & MCQ)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="gen-count">Number of Cards</label>
+          <input type="number" id="gen-count" value="5" min="1" max="20">
+        </div>
+        <div class="form-group">
+          <label for="gen-material">Syllabus Material (Optional)</label>
+          <select id="gen-material">
+            <option value="">-- Use General Knowledge / All Materials --</option>
+          </select>
+        </div>
+        <button type="submit" class="btn" style="width: 100%;">Generate Study Deck</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Adaptive AI Explainer Modal -->
+  <div id="explainer-modal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeExplainerModal()">&times;</button>
+      <div class="badge" style="background: #FFE4E6; color: #881337;">Incorrect Answer Analysis</div>
+      <h3 id="explainer-question-title">Explanation</h3>
+      <p id="explainer-summary" style="margin-bottom: 1rem; color: var(--text-secondary);"></p>
+      
+      <div class="form-group">
+        <label for="understanding-level">Select Your Understanding Level:</label>
+        <select id="understanding-level" onchange="fetchAiExplanation()">
+          <option value="ELI5">ELI5 (Explain like I'm 5)</option>
+          <option value="Beginner" selected>Beginner / Student</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced Expert</option>
+        </select>
+      </div>
+
+      <div class="panel" style="background: #F8FAFC; margin-bottom: 0; padding: 1.25rem;">
+        <strong style="display: block; margin-bottom: 0.5rem; color: var(--primary);">AI Tutor Explanation:</strong>
+        <p id="explainer-text" style="color: var(--text-primary); white-space: pre-wrap;">Loading explanation...</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
