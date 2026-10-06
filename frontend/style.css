@@ -12,6 +12,15 @@
   --radius: 8px;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
+body.dark-mode {
+    --bg-color: #0F172A;
+    --card-bg: #1E293B;
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --primary: #0F172A;
+    --primary-hover: #334155;
+    --border: #475569;
+}
 
 * {
   box-sizing: border-box;
@@ -90,7 +99,7 @@ h2 {
   font-size: 1.75rem;
   margin-bottom: 1rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--text-primary);
 }
 
 p.subtitle {
@@ -124,7 +133,7 @@ p.subtitle {
 .card h3 {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  color: var(--primary);
+  color: var(--text-primary);
 }
 
 .card p {
@@ -187,7 +196,7 @@ input, select, textarea {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   font-size: 1rem;
-  background-color: white;
+  background-color: var(--card-bg);
   color: var(--text-primary);
 }
 
@@ -213,7 +222,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .flashcard-box {
-  background: white;
+  background: var(--card-bg);
   border: 2px solid var(--border);
   border-radius: 12px;
   padding: 3rem 2rem;
@@ -236,7 +245,7 @@ input:focus, select:focus, textarea:focus {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: var(--primary);
+  color: var(--text-primary);
 }
 
 .flashcard-answer {
@@ -263,14 +272,14 @@ input:focus, select:focus, textarea:focus {
   padding: 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: white;
+  background: var(--card-bg);
   cursor: pointer;
   font-weight: 500;
   transition: background 0.15s, border-color 0.15s;
 }
 
 .mcq-option:hover {
-  background: #F1F5F9;
+  background: var(--primary-hover);
   border-color: var(--text-secondary);
 }
 
@@ -305,7 +314,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .modal-content {
-  background: white;
+  background: var(--card-bg);
   padding: 2.5rem;
   border-radius: 12px;
   width: 90%;
